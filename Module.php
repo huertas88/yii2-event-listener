@@ -15,13 +15,24 @@ use yii\web\View;
  */
 class Module extends \yii\base\Module implements BootstrapInterface
 {
-    public $eventsToListener = [''];
+	public $eventsToListener = [''];
 
     /**
      * @inheritdoc
      */
     public function bootstrap($app)
     {
-        
+    	$listeners = $this->listeners();
+    	foreach ($this->eventsToListener as $e) {
+    		$listener =  Yii::createObject($listeners[$e]['class']);
+    		$listener->run();
+    	}
+    }
+
+    public function listeners()
+    {
+    	return [
+    		'swiftmailer' => ['class' => 'huertas88\elistener\SwiftmailerListener'],
+    	];
     }
 }
