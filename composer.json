@@ -1,0 +1,17 @@
+{
+    "name": "huertas88/yii2-event-listener",
+    "require": {
+        "yiisoft/yii2": "^2.0"
+    },
+    "authors": [
+        {
+            "name": "Toni Huertas",
+            "email": "huertas.toni@gmail.com"
+        }
+    ],
+     "autoload": {
+        "psr-4": {
+            "huertas88\\elistener\\": ""
+        }
+    }
+}
